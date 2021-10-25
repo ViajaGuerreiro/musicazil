@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
     <title>Sistema de musicas Musicazil</title>
 </head>
 <body>
@@ -27,17 +27,19 @@
             Usuários
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Cadastrar</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="cadUsuario.php">Cadastrar</a></li>
+            <li><a class="dropdown-item" href="#">Pesquisar Todos</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Pesquisar por código</a></li>
           </ul>
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Pesquise aqui" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
       </form>
     </div>
   </div>
 </nav>
+
+<div class="container">
