@@ -14,18 +14,16 @@ include_once("../view/header.php");
     </tr>
   </thead>
   <tbody>
-      <?php
-        $usuario = listarTodosUsuarios($conexao);
-        foreach($usuario as $usuarios) {
-      ?>
-    <tr>
-      <th scope="row"><?= $usuario["idusu"] ?></th>
-      <td> <?= $usuario["emailusu"] ?> </td>
-      <td></td>
-      <td></td>
-    </tr>
     <?php
-        }
+    $usuario = listarTodosUsuarios($conexao);
+    foreach ($usuario as $usuarios) {
+    ?>
+      <tr>
+        <th scope="row"><?= $usuarios["idusu"] ?></th>
+        <td><?= $usuarios["emailusu"] ?></td>
+      </tr>
+    <?php
+    }
     ?>
   </tbody>
 </table>

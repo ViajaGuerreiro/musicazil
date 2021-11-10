@@ -17,4 +17,16 @@ function listarTodosUsuarios($conexao) {
 return $resultado;
 }
 
+function listaUsuarioCodigo($conexao,$codigoUsu){
+    $query = "select * from tbusuario where idusu = '{$codigoUsu}'";
+    $resultado = mysqli_query($conexao, $query);
+return $resultado;
+}
+
+function ListaUsuarioEmail($conexao,$emailUsu){
+    $query = "select * from tbusuario where emailusu like '%{$emailUsu}%'";
+    $resultado = mysqli_query($conexao, $query);
+return $resultado;
+}
+
 ?>

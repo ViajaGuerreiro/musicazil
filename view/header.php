@@ -30,7 +30,7 @@
             <li><a class="dropdown-item" href="../view/cadUsuario.php">Cadastrar</a></li>
             <li><a class="dropdown-item" href="../view/visuTudoUsuario.php">Pesquisar Todos</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Pesquisar por código</a></li>
+            <li><a class="dropdown-item" href="../view/visuUsuario.php">Pesquisar</a></li>
           </ul>
         </li>
       </ul>
