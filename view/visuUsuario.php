@@ -73,16 +73,16 @@ include_once("../view/header.php");
                 <th scope="row"><?= $usuarios["idusu"] ?></th>
                 <td><?= $usuarios["emailusu"] ?></td>
                 <td>
-                    <form action="" method="POST">
+                    <form action="../controller/alterarUsuario.php" method="POST">
                         <input type="hidden" name="idUsuario" value="<?= $usuarios["idusu"] ?>">
-                        <button type="submit" class="btn btn-primary">Alterar</button>
+                        <button type="submit" class="btn btn-success">Alterar</button>
 
                     </form>
                 </td>
                 <td>
-                    <form action="" method="POST">
+                    <form action="../controller/deletarUsuario.php" method="POST">
                         <input type="hidden" name="idUsuario" value="<?= $usuarios["emailusu"] ?>">
-                        <button type="submit" class="btn btn-primary">Alterar</button>
+                        <button type="submit" class="btn btn-danger">Alterar</button>
 
                     </form>
                 </td>

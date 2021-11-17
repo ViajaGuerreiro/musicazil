@@ -29,4 +29,19 @@ function ListaUsuarioEmail($conexao,$emailUsu){
 return $resultado;
 }
 
+function deletarUsuario($conexao, $codUsu) {
+    $query = "delete from tbusuario where idusu = '{$codUsu}'";
+    $resultado = mysqli_query($conexao, $query);
+return $resultado;
+}
+
+function alterarUsuario($conexao, $email, $senha, $idUsu) {
+    $opcao = ["cost" => 8];
+    $senhaCrypto = password_hash($senha, PASSWORD_BCRYPT, $opcao);
+    
+    $query = "update tbusuario set emailusu = '{$email}', senhausu = '{$senha}' where idusu = '{$idUsu}'";
+    $resultado = mysqli_query($conexao, $query);
+return $resultado;
+}
+
 ?>
