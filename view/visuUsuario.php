@@ -80,7 +80,7 @@ include_once("../view/header.php");
                     </form>
                 </td>
                 <td>
-                    <form action="../controller/deletarUsuario.php" method="POST">
+                    <form action="../view/formDeletarUsuario.php" method="POST">
                         <input type="hidden" name="codUsu" value="<?= $usuarios["emailusu"] ?>">
                         <button type="submit" class="btn btn-danger">Excluir</button>
 
