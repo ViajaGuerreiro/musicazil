@@ -5,7 +5,12 @@
     display: flexbox;
 }
 
-#imagemPrincipal {
-    width: 500px;
-    
+body {
+    background: url("../imagens/MusicaZil2.gif");
+
+    background-size: cover;
+}
+
+.AdmTitle {
+    color: gray;
 }
