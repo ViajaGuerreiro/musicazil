@@ -38,9 +38,9 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="../view/cadCliente.php">Cadastrar Clientes</a></li>
-            <li><a class="dropdown-item" href="../view/visuTudoUsuario.php">Todos Clientes</a></li>
+            <li><a class="dropdown-item" href="../view/visuTudoCliente.php">Todos Clientes</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="../view/visuUsuario.php">Pesquisar Cliente</a></li>
+            <li><a class="dropdown-item" href="../view/visuCliente.php">Pesquisar Cliente</a></li>
           </ul>
         </li>
       </ul>

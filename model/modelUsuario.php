@@ -44,4 +44,15 @@ function alterarUsuario($conexao, $email, $senha, $idUsu) {
 return $resultado;
 }
 
+function inserirClienteBanco($conexao, $nome, $telefone, $nascimento, $codigoUsu) {
+    $query = "insert into tbcliente(nomeclie, foneclie, data_nasc, idusu) values('{$nome}', '{$telefone}', '{$nascimento}','{$codigoUsu}')";
+    $resultado = mysqli_query($conexao,$query);
+}
+
+function listarTodosClientes($conexao) {
+    $query = "select idcli as 'codigo do cliente', nomeclie as 'nome', foneclie as 'telefone', date_format(data_nasc, '%d/%m/%Y') as 'nascimento', idusu as 'codigo do usuario' from tbcliente";
+    $resultado = mysqli_query($conexao, $query);
+return $resultado;
+}
+
 ?>
