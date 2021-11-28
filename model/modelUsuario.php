@@ -91,5 +91,11 @@ function deletarCliente($conexao, $codCli) {
 return $resultado;
 }
 
+function alterarCliente($conexao,$idCli, $nome, $telefone, $nascimento, $codigoUsu) {
+    $query = "update tbcliente set nomeusu = '{$nome}', foneclie = '{$telefone}', data_nasc = '{$nascimento}', idusu ='{$codigoUsu}'  where idcli = '{$idCli}' ";
+    $resultado = mysqli_query($conexao, $query);
+return $resultado;
+}
+
 
 ?>
