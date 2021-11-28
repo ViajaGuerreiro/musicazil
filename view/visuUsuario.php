@@ -15,7 +15,7 @@ include_once("../view/header.php");
             <div class="accordion-body">
                 <form action="visuUsuario.php" method="post">
                     <div class="col-12">
-                        <label for="inputBusca" class="form-label">Digite o código</label>
+                        <label for="inputBusca" class="form-label">Digite o código do Usuario</label>
                         <input type="text" name="codigoUsu" class="form-control" id="inputBusca" placeholder="1234">
                     </div>
                     <div class="col-12 p-1">
@@ -50,7 +50,7 @@ include_once("../view/header.php");
 <table class="table table-success table-striped m-4 p-4">
     <thead>
         <tr>
-            <th scope="col">Código</th>
+            <th scope="col">Código do Usuario</th>
             <th scope="col">Email</th>
             <th scope="col">Alterar</th>
             <th scope="col">Excluir</th>

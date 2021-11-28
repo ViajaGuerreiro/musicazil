@@ -55,4 +55,41 @@ function listarTodosClientes($conexao) {
 return $resultado;
 }
 
+function listaClienteCodigo($conexao,$codigoCli){
+    $query = "select idcli as 'codigo do cliente', nomeclie as 'nome', foneclie as 'telefone', date_format(data_nasc, '%d/%m/%Y') as 'nascimento', idusu as 'codigo do usuario' from tbcliente where idcli = '{$codigoCli}'";
+    $resultado = mysqli_query($conexao, $query);
+return $resultado;
+}
+
+function listaNomeCli($conexao,$nomeCli){
+    $query = "select idcli as 'codigo do cliente', nomeclie as 'nome', foneclie as 'telefone', date_format(data_nasc, '%d/%m/%Y') as 'nascimento', idusu as 'codigo do usuario' from tbcliente where nomeclie = '%{$nomeCli}%'";
+    $resultado = mysqli_query($conexao, $query);
+return $resultado;
+}
+
+function listaTelefoneCli($conexao,$telefoneCli){
+    $query = "select idcli as 'codigo do cliente', nomeclie as 'nome', foneclie as 'telefone', date_format(data_nasc, '%d/%m/%Y') as 'nascimento', idusu as 'codigo do usuario' from tbcliente where foneclie = '{$telefoneCli}'";
+    $resultado = mysqli_query($conexao, $query);
+return $resultado;
+}
+
+function listaNascimentoCli($conexao,$nascimentoCli){
+    $query = "select idcli as 'codigo do cliente', nomeclie as 'nome', foneclie as 'telefone', date_format(data_nasc, '%d/%m/%Y') as 'nascimento', idusu as 'codigo do usuario' from tbcliente where date_format(data_nasc, '%d/%m/Y') = '{$nascimentoCli}'";
+    $resultado = mysqli_query($conexao, $query);
+return $resultado;
+}
+
+function listaClienteCodigoUsuario($conexao,$codigoUsu){
+    $query = "select idcli as 'codigo do cliente', nomeclie as 'nome', foneclie as 'telefone', date_format(data_nasc, '%d/%m/%Y') as 'nascimento', idusu as 'codigo do usuario' from tbcliente where date_format(data_nasc, '%d/%m/Y') = '{$codigoUsu}'";
+    $resultado = mysqli_query($conexao, $query);
+return $resultado;
+}
+
+function deletarCliente($conexao, $codCli) {
+    $query = "delete from tbcliente where idcli = '{$codCli}'";
+    $resultado = mysqli_query($conexao, $query);
+return $resultado;
+}
+
+
 ?>
