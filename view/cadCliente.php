@@ -8,7 +8,7 @@
     <input type="text" required class="form-control" name="nome" id="nome">
   <div class="mb-3">
     <label class="subtitles" for="telefone" class="form-label">Telefone</label>
-    <input type="tel" required name="telefone" class="form-control" id="telefone">
+    <input type="tel" required name="telefone" class="form-control" maxlength="11" id="telefone">
   </div>
   <div class="mb-3">
     <label class="subtitles" for="nascimento" class="form-label">Nascimento</label>

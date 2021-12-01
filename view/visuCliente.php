@@ -35,8 +35,8 @@ include_once("../view/header.php");
             <div class="accordion-body">
                 <form action="visuCliente.php" method="post">
                     <div class="col-12">
-                        <label for="inputBusca" class="form-label">Digite o nome</label>
-                        <input type="text" name="nomeCli" class="form-control" id="inputBusca" placeholder="Digita o nome">
+                        <label for="inputBusca2" class="form-label">Digite o nome</label>
+                        <input type="text" name="nomeCli" class="form-control" id="inputBusca2" placeholder="Digita o nome">
                     </div>
                     <div class="col-12 p-1">
                         <button type="submit" class="btn btn-primary">Buscar ae truta!!</button>
@@ -46,12 +46,12 @@ include_once("../view/header.php");
         </div>
     </div>
     <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
+        <h2 class="accordion-header" id="headingThree">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 Por telefone
             </button>
         </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <form action="visuCliente.php" method="post">
                     <div class="col-12">
@@ -66,12 +66,12 @@ include_once("../view/header.php");
         </div>
     </div>
     <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
+        <h2 class="accordion-header" id="headingFour">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                 Por Data de Nascimento
             </button>
         </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <form action="visuCliente.php" method="post">
                     <div class="col-12">
@@ -86,12 +86,12 @@ include_once("../view/header.php");
         </div>
     </div>
     <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
+        <h2 class="accordion-header" id="headingFive">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                 Por Codigo de Usuario
             </button>
         </h2>
-        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <form action="visuCliente.php" method="post">
                     <div class="col-12">
@@ -127,19 +127,21 @@ include_once("../view/header.php");
         $nascimentoCliente = isset($_POST["nascimentoCli"]) ? $_POST["nascimentoCli"] : "";
         $codigoCliUsu = isset($_POST["codigoCliUsu"]) ? $_POST["codigoCliUsu"] : "";
 
+
+
         if ($codigoCli) {
             $cliente = listaClienteCodigo($conexao, $codigoCli);
         } else if($nomeCliente) {
-            $cliente = listaNomeCli($conexao, $nomeCli);
+            $cliente = listaNomeCli($conexao, $nomeCliente);
         }
         else if($telefoneCliente) {
-            $cliente = listaTelefoneCli($conexao,$telefoneCli);
+            $cliente = listaTelefoneCli($conexao,$telefoneCliente);
         }
         else if($nascimentoCliente) {
-            $cliente = listaNascimentoCli($conexao,$nascimentoCli);
+            $cliente = listaNascimentoCli($conexao,$nascimentoCliente);
         }
         else if($codigoCliUsu) {
-            $cliente = listaClienteCodigoUsuario($conexao,$codigoUsu);
+            $cliente = listaClienteCodigoUsuario($conexao,$codigoCliUsu);
         }
         //$usuario = listarTodosUsuarios($conexao);
         foreach ($cliente as $clientes) {
