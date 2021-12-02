@@ -92,8 +92,7 @@ return $resultado;
 }
 
 function alterarCliente($conexao,$idCli, $nome, $telefone, $nascimento, $codigoUsu) {
-    $query = " set @nascimento = right(data_nasc, 4) + '/' + 
-                update tbcliente set nomeusu = '{$nome}', foneclie = '{$telefone}', data_nasc = '{$nascimento}', idusu ='{$codigoUsu}'  where idcli = '{$idCli}' ";
+    $query = "update tbcliente set nomeusu = '{$nome}', foneclie = '{$telefone}', data_nasc = '{$nascimento}', idusu ='{$codigoUsu}'  where idcli = '{$idCli}' ";
     $resultado = mysqli_query($conexao, $query);
 return $resultado;
 }
