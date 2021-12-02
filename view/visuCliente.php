@@ -143,7 +143,7 @@ include_once("../view/header.php");
         else if($codigoCliUsu) {
             $cliente = listaClienteCodigoUsuario($conexao,$codigoCliUsu);
         }
-        //$usuario = listarTodosUsuarios($conexao);
+        
         foreach ($cliente as $clientes) {
         ?>
             <tr>

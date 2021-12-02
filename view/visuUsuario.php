@@ -66,7 +66,7 @@ include_once("../view/header.php");
         } else {
             $usuario = ListaUsuarioEmail($conexao, $emailUsu);
         }
-        //$usuario = listarTodosUsuarios($conexao);
+
         foreach ($usuario as $usuarios) {
         ?>
             <tr>
