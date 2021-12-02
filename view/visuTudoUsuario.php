@@ -16,7 +16,6 @@ include_once("../view/header.php");
   <tbody>
     <?php
     $usuario = listarTodosUsuarios($conexao);
-    $cliente = listarTodosClientes($conexao);
     foreach ($usuario as $usuarios) {
     ?>
       <tr>

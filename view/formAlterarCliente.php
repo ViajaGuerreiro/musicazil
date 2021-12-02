@@ -1,5 +1,5 @@
 <?php
-    include_once("../model/modelUsuario.php");
+    include_once("../model/modelCliente.php");
     include_once("../model/conexao.php");
     include_once("header.php");
 
@@ -26,10 +26,6 @@
   <div class="mb-3">
     <label class="subtitles" for="nascimento" class="form-label">Nascimento</label>
     <input type="date" required name="nascimento" value= "<?= $cliente["nascimento"] ?>" class="form-control" id="nascimento">
-  </div>
-  <div class="mb-3">
-    <label class="subtitles" for="codigoUsu" class="form-label">Codigo de Usuario</label>
-    <input type="number" required name="codigoUsu" value= "<?= $cliente["codigo do usuario"] ?>" class="form-control" id="codigoUsu">
   </div>
   <button type="submit" class="btn btn-primary">Alterar</button>
 </form>

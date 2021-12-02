@@ -1,12 +1,10 @@
 <?php
 
 include_once("../model/conexao.php");
-include_once("../model/modelUsuario.php");
+include_once("../model/modelCliente.php");
 extract($_REQUEST, EXTR_OVERWRITE);
 
-$nascimento = implode("-",array_reverse(explode("/",$nascimento)));
-
-if(alterarCliente($conexao,$codigoCli, $nome, $telefone, $nascimento, $codigoUsu)) {
+if(alterarCliente($conexao,$codigoCli, $nome, $telefone, $nascimento)) {
     header("Location: ../view/visuCliente.php");
 } 
 else {

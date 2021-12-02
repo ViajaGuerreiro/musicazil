@@ -1,6 +1,6 @@
 <?php
 
-include_once("../model/modelUsuario.php");
+include_once("../model/modelCliente.php");
 include_once("../model/conexao.php");
 
 extract($_REQUEST, EXTR_OVERWRITE);

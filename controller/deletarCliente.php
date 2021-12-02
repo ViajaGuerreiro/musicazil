@@ -1,7 +1,7 @@
 <?php
 
 include_once("../model/conexao.php");
-include_once("../model/modelUsuario.php");
+include_once("../model/modelCliente.php");
 extract($_REQUEST, EXTR_OVERWRITE);
 if(deletarCliente($conexao, $codCli)) {
     

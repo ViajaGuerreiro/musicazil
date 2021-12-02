@@ -1,7 +1,7 @@
 <?php
 
 include_once("../model/conexao.php");
-include_once("../model/modelUsuario.php");
+include_once("../model/modelCliente.php");
 include_once("../view/header.php");
 ?>
 <div class="accordion" id="accordionExample">
