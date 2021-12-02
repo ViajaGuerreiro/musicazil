@@ -12,6 +12,7 @@ create table tbusuario
 (
 idcli int(4) auto_increment primary key,
 idusu int(4),
+data_nasc date,
 constraint usu_cliente_conexao
 foreign key(idusu)
 references tbusuario(idusu),
