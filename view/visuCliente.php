@@ -127,6 +127,8 @@ include_once("../view/header.php");
         $nascimentoCliente = isset($_POST["nascimentoCli"]) ? $_POST["nascimentoCli"] : "";
         $codigoCliUsu = isset($_POST["codigoCliUsu"]) ? $_POST["codigoCliUsu"] : "";
 
+        $cliente = listarTodosClientes($conexao);
+
 
 
         if ($codigoCli) {
