@@ -156,7 +156,7 @@ include_once("../view/header.php");
                 <td><?= $clientes["codigo do usuario"] ?></td>
                 <td>
                     <form action="../view/formAlterarCliente.php" method="POST">
-                        <input type="hidden" name="codCli" value="<?= $clientes["codigo do cliente"] ?>">
+                        <input type="hidden" name="codCliente" value="<?= $clientes["codigo do cliente"] ?>">
                         <button type="submit" class="btn btn-success">Alterar</button>
 
                     </form>

@@ -42,7 +42,7 @@ return $resultado;
 }
 
 function deletarArtista($conexao, $codArt) {
-    $query = "delete from tbartista where idart = '{$codArt}'";
+    $query = "delete from tbartista where idart = {$codArt}";
     $resultado = mysqli_query($conexao, $query);
 return $resultado;
 }

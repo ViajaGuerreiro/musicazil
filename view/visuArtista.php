@@ -157,14 +157,14 @@ include_once("../view/header.php");
                 <td><?= $artistas["codigo do cliente"] ?></td>
                 <td>
                     <form action="../view/formAlterarCliente.php" method="POST">
-                        <input type="hidden" name="codMusica" value="<?= $artistas["codigo do cliente"] ?>">
+                        <input type="hidden" name="codCliente" value="<?= $artistas["codigo do cliente"] ?>">
                         <button type="submit" class="btn btn-success">Alterar</button>
 
                     </form>
                 </td>
                 <td>
                     <form action="../controller/deletarArtista.php" method="POST">
-                        <input id="DeletarCli" type="hidden" name="codCli" value="<?= $artistas["codigo do cliente"] ?>">
+                        <input id="DeletarArt" type="hidden" name="codArt" value="<?= $artistas["codigo do artista"] ?>">
                         <button type="submit" class="btn btn-danger">Excluir</button>
                     </form>
                 </td>
