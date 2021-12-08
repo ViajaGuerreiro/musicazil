@@ -18,13 +18,13 @@ return $resultado;
 }
 
 function listaNomeCli($conexao,$nomeCli){
-    $query = "select idcli as 'codigo do cliente', nomeclie as 'nome', foneclie as 'telefone', date_format(data_nasc, '%d/%m/%Y') as 'nascimento', idusu as 'codigo do usuario' from tbcliente where nomeclie = '{$nomeCli}'";
+    $query = "select idcli as 'codigo do cliente', nomeclie as 'nome', foneclie as 'telefone', date_format(data_nasc, '%d/%m/%Y') as 'nascimento', idusu as 'codigo do usuario' from tbcliente where nomeclie like '%{$nomeCli}%'";
     $resultado = mysqli_query($conexao, $query);
 return $resultado;
 }
 
 function listaTelefoneCli($conexao,$telefoneCli){
-    $query = "select idcli as 'codigo do cliente', nomeclie as 'nome', foneclie as 'telefone', date_format(data_nasc, '%d/%m/%Y') as 'nascimento', idusu as 'codigo do usuario' from tbcliente where foneclie = '{$telefoneCli}'";
+    $query = "select idcli as 'codigo do cliente', nomeclie as 'nome', foneclie as 'telefone', date_format(data_nasc, '%d/%m/%Y') as 'nascimento', idusu as 'codigo do usuario' from tbcliente where foneclie like '%{$telefoneCli}%'";
     $resultado = mysqli_query($conexao, $query);
 return $resultado;
 }

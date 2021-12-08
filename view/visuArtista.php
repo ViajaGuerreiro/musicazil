@@ -17,7 +17,7 @@ include_once("../view/header.php");
                 <form action="visuArtista.php" method="post">
                     <div class="col-12">
                         <label for="inputBusca" class="form-label">Digite o código do Artista</label>
-                        <input type="text" name="codigoCli" class="form-control" id="inputBusca" placeholder="1234">
+                        <input type="text" name="codigoArt" class="form-control" id="inputBusca" placeholder="1234">
                     </div>
                     <div class="col-12 p-1">
                         <button type="submit" class="btn btn-primary">Buscar ae truta!!</button>
@@ -37,7 +37,7 @@ include_once("../view/header.php");
                 <form action="visuArtista.php" method="post">
                     <div class="col-12">
                         <label for="inputBusca2" class="form-label">Digite o nome</label>
-                        <input type="text" name="nomeCli" class="form-control" id="inputBusca2" placeholder="Digita o nome">
+                        <input type="text" name="nomeArt" class="form-control" id="inputBusca2" placeholder="Digita o nome">
                     </div>
                     <div class="col-12 p-1">
                         <button type="submit" class="btn btn-primary">Buscar ae truta!!</button>
@@ -57,7 +57,7 @@ include_once("../view/header.php");
                 <form action="visuArtista.php" method="post">
                     <div class="col-12">
                         <label for="inputBusca" class="form-label">Digite o telefone</label>
-                        <input type="text" name="telefoneCli" class="form-control" id="inputBusca" placeholder="11911111111">
+                        <input type="text" name="telefoneArt" class="form-control" id="inputBusca" placeholder="11911111111">
                     </div>
                     <div class="col-12 p-1">
                         <button type="submit" class="btn btn-primary">Buscar ae truta!!</button>
@@ -77,7 +77,7 @@ include_once("../view/header.php");
                 <form action="visuArtista.php" method="post">
                     <div class="col-12">
                         <label for="inputBusca" class="form-label">Digite a Data de Nascimento</label>
-                        <input type="date" name="nascimentoCli" class="form-control" id="inputBusca" placeholder="xx/xx/xxxx">
+                        <input type="date" name="nascimentoArt" class="form-control" id="inputBusca" placeholder="xx/xx/xxxx">
                     </div>
                     <div class="col-12 p-1">
                         <button type="submit" class="btn btn-primary">Buscar ae truta!!</button>
@@ -89,7 +89,7 @@ include_once("../view/header.php");
     <div class="accordion-item">
         <h2 class="accordion-header" id="headingFive">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                Por Codigo de Usuario
+                Por Codigo de Cliente
             </button>
         </h2>
         <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
@@ -97,7 +97,7 @@ include_once("../view/header.php");
                 <form action="visuArtista.php" method="post">
                     <div class="col-12">
                         <label for="inputBusca" class="form-label">Digite o codigo de usuario</label>
-                        <input type="text" name="codigoCliUsu" class="form-control" id="inputBusca" placeholder="1234">
+                        <input type="text" name="codigoCli" class="form-control" id="inputBusca" placeholder="1234">
                     </div>
                     <div class="col-12 p-1">
                         <button type="submit" class="btn btn-primary">Buscar ae truta!!</button>
@@ -122,49 +122,49 @@ include_once("../view/header.php");
     </thead>
     <tbody>
         <?php
+        $codigoArt = isset($_POST["codigoArt"]) ? $_POST["codigoArt"] : "";
+        $nomeArt = isset($_POST["nomeArt"]) ? $_POST["nomeArt"] : "";
+        $telefoneArt = isset($_POST["telefoneArt"]) ? $_POST["telefoneArt"] : "";
+        $nascimentoArt = isset($_POST["nascimentoArt"]) ? $_POST["nascimentoArt"] : "";
         $codigoCli = isset($_POST["codigoCli"]) ? $_POST["codigoCli"] : "";
-        $nomeCliente = isset($_POST["nomeCli"]) ? $_POST["nomeCli"] : "";
-        $telefoneCliente = isset($_POST["telefoneCli"]) ? $_POST["telefoneCli"] : "";
-        $nascimentoCliente = isset($_POST["nascimentoCli"]) ? $_POST["nascimentoCli"] : "";
-        $codigoCliUsu = isset($_POST["codigoCliUsu"]) ? $_POST["codigoCliUsu"] : "";
 
-        $cliente = listarTodosClientes($conexao);
+        $artista = listarTodosArtistas($conexao);
 
 
 
-        if ($codigoCli) {
-            $cliente = listaClienteCodigo($conexao, $codigoCli);
-        } else if($nomeCliente) {
-            $cliente = listaNomeCli($conexao, $nomeCliente);
+        if ($codigoArt) {
+            $artista = listaArtistaCodigo($conexao, $codigoArt);
+        } else if($nomeArt) {
+            $artista = listaArtistaNome($conexao,$nomeArt);
         }
-        else if($telefoneCliente) {
-            $cliente = listaTelefoneCli($conexao,$telefoneCliente);
+        else if($telefoneArt) {
+            $artista = listaArtistaTelefone($conexao,$telefoneArt);
         }
-        else if($nascimentoCliente) {
-            $cliente = listaNascimentoCli($conexao,$nascimentoCliente);
+        else if($nascimentoArt) {
+            $artista = listaArtistaNascimento($conexao,$nascimentoArt);
         }
-        else if($codigoCliUsu) {
-            $cliente = listaClienteCodigoUsuario($conexao,$codigoCliUsu);
+        else if($codigoCli) {
+            $artista = listaArtistaCodigoCli($conexao,$codigoCli);
         }
         
-        foreach ($cliente as $clientes) {
+        foreach ($artista as $artistas) {
         ?>
             <tr>
-                <th scope="row"><?= $clientes["codigo do cliente"] ?></th>
-                <td><?= $clientes["nome"] ?></td>
-                <td><?= $clientes["telefone"] ?></td>
-                <td><?= $clientes["nascimento"] ?></td>
-                <td><?= $clientes["codigo do usuario"] ?></td>
+                <th scope="row"><?= $artistas["codigo do artista"] ?></th>
+                <td><?= $artistas["nome"] ?></td>
+                <td><?= $artistas["telefone"] ?></td>
+                <td><?= $artistas["nascimento"] ?></td>
+                <td><?= $artistas["codigo do cliente"] ?></td>
                 <td>
                     <form action="../view/formAlterarCliente.php" method="POST">
-                        <input type="hidden" name="codCli" value="<?= $clientes["codigo do cliente"] ?>">
+                        <input type="hidden" name="codMusica" value="<?= $artistas["codigo do cliente"] ?>">
                         <button type="submit" class="btn btn-success">Alterar</button>
 
                     </form>
                 </td>
                 <td>
                     <form action="../controller/deletarArtista.php" method="POST">
-                        <input id="DeletarCli" type="hidden" name="codCli" value="<?= $clientes["codigo do cliente"] ?>">
+                        <input id="DeletarCli" type="hidden" name="codCli" value="<?= $artistas["codigo do cliente"] ?>">
                         <button type="submit" class="btn btn-danger">Excluir</button>
                     </form>
                 </td>

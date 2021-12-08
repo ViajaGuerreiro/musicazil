@@ -14,7 +14,6 @@ include_once("../view/header.php");
             <th scope="col">Telefone</th>
             <th scope="col">Data de Nascimento</th>
             <th scope="col">Codigo de Cliente</th>
-            <th scope="col">Excluir</th>
         </tr>
     </thead>
     <tbody>
@@ -28,12 +27,6 @@ include_once("../view/header.php");
                 <td><?= $artistas["telefone"] ?></td>
                 <td><?= $artistas["nascimento"] ?></td>
                 <td><?= $artistas["codigo do cliente"] ?></td>
-                <td>
-                    <form action="../controller/deletarArtista.php" method="POST">
-                        <input id="DeletarArt" type="hidden" name="codArt" value="<?= $artistas["codigo do Artista"] ?>">
-                        <button type="submit" class="btn btn-danger">Excluir</button>
-                    </form>
-                </td>
             </tr>
         <?php
         }

@@ -31,7 +31,7 @@ include_once("../view/header.php");
                 <td><?= $musicas["lancamento"] ?></td>
                 <td><?= $musicas["duration"] ?></td>
                 <td><?= $musicas["genero"] ?></td>
-                <td><a href= "<?=$musicas["link"]?>"></a></td>
+                <td><a href= "<?=$musicas["link"]?>"><?= $musicas["link"]?></a></td>
                 <td><?= $musicas["codigo do artista"] ?></td>
             </tr>
         <?php

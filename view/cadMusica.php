@@ -20,7 +20,7 @@
   </div>
   <div class="mb-3">
     <label class="subtitles" for="letra" class="form-label">Letra</label>
-    <input type="text" required name="letra" class="form-control" id="letra">
+    <input type="text" name="letra" class="form-control" id="letra">
   </div>
   <div class="mb-3">
     <label class="subtitles" for="link" class="form-label">Link da musica</label>
