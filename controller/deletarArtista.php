@@ -5,10 +5,10 @@ include_once("../model/modelArtista.php");
 extract($_REQUEST, EXTR_OVERWRITE);
 if(deletarArtista($conexao, $codArt)) {
     
-    header("Location: ../view/visuTudoArtista.php");
+    header("Location: ../view/visuArtista.php");
 } 
 else {
-    header("Location: ../view/visuTudoArtista.php");
+    header("Location: ../view/visuArtista.php");
 }
 
 ?>
